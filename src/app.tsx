@@ -25,10 +25,8 @@ const App = () => {
             });
             if(img) {
                file = await dialog.showSaveDialog({ 
-                        title: "Select the File Path to save", 
                         // Default path to assets folder 
-                        defaultPath: path.join(__dirname,  "../assets/image.png"), 
-                        buttonLabel: "Save", 
+                        defaultPath: path.join(__dirname,  "../assets/image.png"),  
                         // Restricting the user to only Image Files. 
                         filters: [ 
                             { 
