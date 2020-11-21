@@ -4,21 +4,22 @@ import * as url from "url";
 
 let mainWindow: Electron.BrowserWindow | null;
 
-function createWindow() {
+const createWindow = async () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       nodeIntegration: true,
       webSecurity: false,
+      contextIsolation: false
     },
   });
 
   if (process.env.NODE_ENV === "development") {
-    mainWindow.loadURL(`http://localhost:4000`);
+    await mainWindow.loadURL(`http://localhost:4000`);
     mainWindow.webContents.openDevTools();
   } else {
-    mainWindow.loadURL(
+    await mainWindow.loadURL(
       url.format({
         pathname: path.join(__dirname, "index.html"),
         protocol: "file:",

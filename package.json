@@ -9,6 +9,7 @@
     "build:electron": "NODE_ENV=production webpack --config webpack.electron.config.js",
     "build:react": "NODE_ENV=production webpack --config webpack.react.config.js",
     "build": "npm run build:electron && npm run build:react",
+    "server": "node ./server/server.js",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
@@ -30,18 +31,32 @@
     "@babel/preset-env": "7.12.1",
     "@babel/preset-react": "7.9.4",
     "@babel/preset-typescript": "7.9.0",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "@types/uuid": "8.3.0",
     "babel-loader": "8.1.0",
-    "electron": "8.2.2",
-    "electron-builder": "22.7.0",
+    "css-loader": "5.0.1",
     "html-webpack-plugin": "4.2.0",
+    "sass": "1.29.0",
+    "sass-loader": "10.1.0",
+    "style-loader": "2.0.0",
     "webpack": "4.42.1",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.10.3"
   },
   "dependencies": {
-    "@types/react": "16.9.34",
-    "@types/react-dom": "16.9.6",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "axios": "0.21.0",
+    "body-parser": "1.19.0",
+    "electron": "11.0.2",
+    "electron-builder": "22.9.1",
+    "express": "4.17.1",
+    "jimp": "0.16.1",
+    "konva": "7.1.8",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-konva": "17.0.0-0",
+    "react-rnd": "10.2.3",
+    "spectre.css": "0.5.9",
+    "uuid": "8.3.1"
   }
 }
