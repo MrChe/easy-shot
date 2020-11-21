@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Position, ResizableDelta, Rnd} from 'react-rnd';
-import { remote } from 'electron';
+import { remote, screen } from 'electron';
 import {ResizeDirection} from "re-resizable";
 import {DraggableData, DraggableEvent} from "react-draggable";
 
@@ -28,7 +28,7 @@ interface CropperState {
 
 export const Cropper = (props: CropperProps): JSX.Element => {
     // const { screen } = remote; // Main process modules
-    const screenSize = remote?.screen?.getPrimaryDisplay().size;
+    const screenSize = screen?.getPrimaryDisplay().size;
     const [dimensions, setDimensions] = useState<any>({
         width: '500px',
         height: '500px',

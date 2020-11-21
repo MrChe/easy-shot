@@ -8,6 +8,7 @@ import {
     desktopCapturer,
     shell,
     remote,
+    screen,
     BrowserWindow,
     DesktopCapturerSource
 } from "electron";
@@ -24,7 +25,7 @@ const UPLOAD_URL = 'http://127.0.0.1:8989/upload';
 
 export const Sniper = () => {
     // const { screen } = remote; // Main process modules
-    const screenSize = remote?.screen?.getPrimaryDisplay().size;
+    const screenSize = screen?.getPrimaryDisplay().size;
     const getContext = () => {
         const context = global.location.search;
         return context.substr(1, context.length - 1);
