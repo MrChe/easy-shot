@@ -33,7 +33,6 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, "../dist/renderer"),
     historyApiFallback: true,
     compress: true,
     hot: true,

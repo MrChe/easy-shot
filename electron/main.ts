@@ -6,13 +6,16 @@ let mainWindow: Electron.BrowserWindow | null;
 
 const createWindow = async () => {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 990,
+    height: 660,
+    title: "Easy Shot App",
+    resizable: true,
+    frame: false,
     webPreferences: {
       nodeIntegration: true,
-      webSecurity: false,
+      enableRemoteModule: true,
       contextIsolation: false
-    },
+    }
   });
 
   if (process.env.NODE_ENV === "development") {
